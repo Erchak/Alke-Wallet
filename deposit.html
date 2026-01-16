@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depositar Dinero - Alke Wallet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { opacity: 0; background-color: #f4f7f6; }
+        .card-deposit { max-width: 420px; width: 100%; border-radius: 20px; border: none; }
+        .icon-box { width: 70px; height: 70px; border-radius: 20px; font-size: 1.8rem; }
+        .input-group-text { border-radius: 12px 0 0 12px !important; background: white; border-right: none; }
+        .form-control-lg { border-radius: 0 12px 12px 0 !important; border-left: none; }
+        .form-control-lg:focus { box-shadow: none; border-color: #ced4da; }
+        .btn-confirm { border-radius: 12px; transition: transform 0.2s; }
+        .btn-confirm:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+    <div class="container vh-100 d-flex align-items-center justify-content-center">
+        <div class="card card-deposit shadow-lg p-3">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <div class="icon-box bg-primary text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-sm">
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                    </div>
+                    <h3 class="font-weight-bold text-dark">Depositar</h3>
+                    <p class="text-muted small">Suma fondos a tu cuenta de forma inmediata</p>
+                </div>
+
+                <div id="alert-container"></div>
+
+                <div class="bg-light p-3 mb-4 rounded-lg text-center border">
+                    <span class="text-muted small font-weight-bold text-uppercase">Saldo Actual</span>
+                    <h2 id="saldo-display" class="font-weight-bold text-primary mb-0">$ 0,00</h2>
+                </div>
+
+                <form id="depositForm">
+                    <div class="form-group mb-4">
+                        <label for="monto" class="small font-weight-bold text-secondary ml-1">Monto a ingresar</label>
+                        <div class="input-group input-group-lg shadow-sm">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text text-success">$</span>
+                            </div>
+                            <input type="number" id="monto" class="form-control" placeholder="0.00" step="any" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="btnConfirmar" class="btn btn-primary btn-block btn-confirm font-weight-bold py-3">
+                        Confirmar Depósito
+                    </button>
+                </form>
+
+                <p id="monto-leyenda" class="text-center mt-3 small text-success font-weight-bold" style="display: none;"></p>
+
+                <div class="text-center mt-4 border-top pt-3">
+                    <a href="menu.html" class="btn btn-link text-muted font-weight-bold small text-decoration-none">
+                        <i class="fas fa-times-circle mr-1"></i> Cancelar operación
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="deposit.js"></script>
+</body>
+</html>

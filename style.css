@@ -1,0 +1,69 @@
+/* Configuraciones generales */
+body {
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Contenedores tipo tarjeta (Login, Depósito y Formulario): */
+.card-wallet {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 2rem;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Caja de saldo */
+.saldo-box {
+    background: #e9ecef;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+    border: 1px solid #dee2e6;
+}
+
+.saldo-box h3 {
+    color: #28a745; /* Color Verde para el dinero */
+    font-weight: bold;
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background-color: #0056b3;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+}
+
+/* Leyendas de confirmación: */
+.leyenda-exito {
+    display: none; 
+    margin-top: 15px;
+    font-weight: 600;
+    color: #155724;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Agenda de contactos: */
+.contacto-item {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.contacto-item:hover {
+    background-color: #f8f9fa;
+}
+
+.contacto-seleccionado {
+    background-color: #007bff !important;
+    color: white !important;
+}

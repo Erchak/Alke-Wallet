@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Movimientos - Alke Wallet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { opacity: 0; background-color: #f8f9fa; transition: opacity 0.4s ease; }
+        .card-transactions { border-radius: 18px; border: none; box-shadow: 0 8px 25px rgba(0,0,0,0.06); background: #fff; }
+        .table thead th { border: none; color: #adb5bd; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-op { border-radius: 6px; padding: 5px 10px; font-weight: 600; font-size: 0.7rem; min-width: 95px; text-align: center; }
+        .monto-in { color: #28a745; font-weight: 700; }
+        .monto-out { color: #dc3545; font-weight: 700; }
+        .empty-state { padding: 60px 0; display: none; }
+        .btn-back { border-radius: 10px; font-weight: 600; border: 1px solid #eee; transition: 0.2s; }
+        .btn-back:hover { background: #f8f9fa; transform: translateX(-2px); }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
+            <div class="card card-transactions p-4">
+                <div class="card-body">
+                    <h2 class="text-center font-weight-bold mb-4">Últimos Movimientos</h2>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6 mx-auto">
+                            <div class="input-group shadow-sm" style="border-radius: 10px; overflow: hidden;">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white border-right-0"><i class="fas fa-filter text-muted"></i></span>
+                                </div>
+                                <select id="filtroTipo" class="form-control border-left-0 shadow-none">
+                                    <option value="todos">Todos los movimientos</option>
+                                    <option value="Depósito">Ver Depósitos</option>
+                                    <option value="Transferencia Enviada">Ver Transferencias</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive" id="contenedor-datos">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Fecha / Hora</th>
+                                    <th>Operación</th>
+                                    <th>Detalle</th>
+                                    <th class="text-right">Monto (CLP)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lista-movimientos">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div id="mensaje-vacio" class="empty-state text-center">
+                        <i class="fas fa-receipt fa-4x mb-3 text-light"></i>
+                        <h5 class="text-muted">Aún no hay registros</h5>
+                        <p class="small text-secondary">Tus movimientos aparecerán aquí automáticamente.</p>
+                    </div>
+
+                    <div class="text-center mt-5 pt-3">
+                        <a href="menu.html" class="btn btn-light btn-back px-4 text-muted">
+                            <i class="fas fa-arrow-left mr-2"></i> Volver al Menú Principal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="transactions.js"></script>
+</body>
+</html>
