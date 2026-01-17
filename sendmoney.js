@@ -133,3 +133,6 @@ $(document).ready(function() {
         }
     });
 });
+
+
+// Fin de sendmoney.js 
